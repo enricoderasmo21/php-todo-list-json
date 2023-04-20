@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Fredoka:wght@300;700&family=Gugi&family=Montserrat:wght@400;600&family=Mynerve&family=Noto+Sans:wght@400;700&family=Open+Sans:wght@400;700&family=Roboto&family=Rowdies:wght@300&display=swap" rel="stylesheet">
-    
+
     <!-- vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Axios -->
@@ -21,18 +21,17 @@
 <body>
 
     <div id="app">
-        
         <div class="back-container">
             <div class="paper">
                 <ul id="shopList">
 
-                    <li></li>
+                    <li v-for="todo in todos"> {{todo.name}} </li>
 
                 </ul>
                 <div class="nail"></div>
             </div>
             <div class="input-container">
-                <input type="text" v-model="newTodo.text" @keydown.enter="addTodo()">
+                <input type="text">
                 <button class="btn">ADD</button>
             </div>
         </div>
