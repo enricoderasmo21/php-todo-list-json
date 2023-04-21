@@ -31,8 +31,8 @@
                 <div class="nail"></div>
             </div>
             <div class="input-container">
-                <input type="text">
-                <button class="btn">ADD</button>
+                <input v-model="newTodo" name="newTodo" @keydown.enter="addTodo()" type="text">
+                <button @click="addTodo()" class="btn">ADD</button>
             </div>
         </div>
     </div>  

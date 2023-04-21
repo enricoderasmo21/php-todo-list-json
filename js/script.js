@@ -6,6 +6,7 @@ createApp({
 
             todos: [],
 
+            newTodo: '',
         }
     },
 
@@ -17,6 +18,25 @@ createApp({
 
                 this.todos = response.data;
             });
+        },
+
+        addTodo(){
+            // this.todos.push(this.newTodo);
+            
+            // this.newTodo = {name: "", done: false};
+            let data = {
+                newTodo: "",
+            }
+
+            data.newTodo = this.newTodo;
+
+            axios.post('./server.php', data, {headers: {'Content-Type':'multipart/form-data'}}).then((response) => {
+
+                console.log(response);
+
+                this.getJson();
+            });
+
         }
     },
 
